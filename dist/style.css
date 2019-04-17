@@ -1,0 +1,618 @@
+/* global settings */
+
+* {
+  box-sizing: border-box;
+}
+
+/* email error notification */
+.error {
+  border-radius: 10px;
+  width: 30em;
+  padding: 5px;
+  margin: 0px auto;
+  background-color: red;
+  color: white;
+}
+
+/* website dim when modal opens */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed; /* stay in place */
+  z-index: 1; /* sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* full width */
+  height:  100%; /* full height */
+  overflow: auto; /* enable scroll if needed */
+  background-color: rbg(0,0,0); /* fallback color */
+  background-color: rgba(0,0,0,0.4); /*black with opacity */
+}
+
+/* modal content box */
+.modal-content {
+  background-color: #B3C6FF;
+  text-align: center;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal-content-text {
+  width: 50%;
+  margin: auto;
+}
+
+/* the close button */
+.closeBtn {
+  font-size: 18px;
+  text-align: center;
+  border: 0;
+  border-radius: 5px;
+  color: #FFFFFF;
+  background-color: #00CC00;
+  padding: 10px 20px;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  cursor: pointer;
+}
+
+
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  background-color: #F2F2F2;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/*responsive media query for main container */
+
+@media screen and (max-width: 520px) {
+.container {
+  width: 95%;
+  margin: auto;
+}
+}
+
+
+.button1 {
+  height: 38px;
+  width: 100px;
+  margin-left: 5px;
+  background: #0066FF;
+  font-size: 16px;
+  border: 0;
+  color: #FFFFFF;
+  border-radius: 8px;
+}
+
+.button1:hover {
+  background: #0052CC;
+  cursor: pointer;
+}
+
+/*follow social media icons main header */
+
+.fa {
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#logo .fa:hover {
+opacity: 0.7;
+}
+
+.fa-facebook {
+  color: #595959;
+}
+
+.fa-twitter {
+  color: #595959;
+}
+
+.tweet-button {
+  color: #FFFFFF;
+  background-color: #00aced;
+  padding: 5px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.section-title {
+  font-family: Verdana;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 75px;
+}
+
+@media screen and (max-width: 400px) {
+.section-title {
+  font-size: 30px;
+}
+}
+
+/* removes outline border from buttons in firefox */
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+/* responsive grid classes */
+
+[class*="col-"] {
+  float: left;
+  padding: 5px;
+  border: 1px solid red;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.31%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.row {
+  border: 1px solid red;
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* main area height adjustment */
+
+#row-spacer {
+  height: 25%;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  display: inline;
+}
+
+header {
+  background: #FFFFFF;
+  color: #333333;
+  /* border-bottom: rgb(238, 244, 252) 3px solid; */
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  box-shadow: 0px 5px 5px #0066FF;
+}
+
+header nav {
+  list-style-type: none;
+  overflow: hidden;
+  float: right;
+}
+
+/* header nav a {
+  float: left;
+  padding: 16px 16px;
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+} */
+
+.nav-link {
+  float: left;
+  padding: 16px 16px;
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+}
+
+header nav a:hover {
+  color: #0066FF;
+}
+
+.active {
+  color: #0066FF;
+}
+
+header .icon {
+  display: none;
+  position: relative;
+  float: none;
+}
+
+.topnav {
+  height: 55px;
+  transition: height 0.3s;
+  display: inline;
+  float: right;
+}
+
+.share-pipe {
+  display: inline;
+  font-size: 28px;
+}
+
+@media screen and (max-width: 600px) {
+header .container {
+  width: 100%;
+  height: 55px;
+}
+.topnav a {display: none;}
+header .icon {
+  float: right;
+  display: block;
+  position: relative;
+  top: 15px;
+  right: 15px;
+ }
+.topnav.responsive {
+  position: fixed;
+  width: 40%;
+  right: 0px;
+  top: 55px;
+  height: 250px;
+  background-color: #000000;
+  opacity: 0.8;
+}
+.topnav.responsive .icon {
+  position: fixed;
+  top: 0px;
+  height: 55px;
+}
+.topnav.responsive a {
+  float: none;
+  display: block;
+  text-align: right;
+  color: #FFFFFF;
+}
+.topnav.responsive a:hover {
+  color: #0066FF;
+}
+}
+
+@media screen and (max-width: 768px) {
+header .container {
+    width: 100%;
+    height: 55px;
+  }
+}
+
+/* showcase */
+
+#showcase {
+  margin-top: 39px;
+  background: url('img/backgroundCurrent.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
+  border: 3px green solid;
+  height: 600px;
+}
+
+#share {
+  border: 2px solid blue;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  width: 150px;
+  height: 24px;
+  float: right;
+  display: inline;
+}
+
+/* corrects facebook like buttons moving in front of (ordering) header */
+
+#share .fb-like {
+  z-index: 1;
+}
+
+#transparent-box h1 {
+margin-top: 0px;
+font-family: Verdana;
+font-weight: normal;
+font-size: 75px;
+letter-spacing: 0.04em;
+color: #FFFFFF;
+text-align: center;
+}
+
+#transparent-box h2 {
+  margin-top: -5%;
+  font-size: 30px;
+  font-family: Verdana;
+  font-weight: normal;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+#showcase .container {
+  width: 100%;
+}
+#row-spacer {
+  height: 15%;
+}
+}
+
+@media screen and (max-width: 600px) {
+  #transparent-box h1 {
+  font-size: 50px;
+}
+}
+
+@media screen and (max-width: 500px) {
+#row-spacer {
+  height: 10%;
+}
+#transparent-box h2 {
+  font-size: 25px;
+}
+}
+
+@media screen and (max-width: 400px) {
+#transparent-box h2 {
+  padding-bottom: 20px;
+}
+}
+
+
+@media screen and (max-width: 768px) {
+#transparent-box {
+  width: 100%;
+}
+#transparent-box h1 {
+  letter-spacing: 0em;
+}
+}
+
+/* subscribe */
+
+#subscribe {
+text-align: center;
+}
+
+#subscribe input[type="email"] {
+font-size: 16px;
+padding: 5px 10px;
+height: 40px;
+width: 600px;
+text-align: left;
+border-radius: 8px;
+margin-bottom: 8px;
+}
+
+#subscribe input:focus {
+  border: 2px solid #0066FF;
+}
+
+@media screen and (max-width: 520px) {
+.container {
+  width: 95%;
+  margin: auto;
+}
+}
+
+@media screen and (max-width: 1000px) {
+#subscribe input[type="email"] {
+  width: 75%;
+}
+}
+
+
+@media screen and (max-width: 768px) {
+#subscribe input[type="email"] {
+  width: 75%;
+}
+}
+
+@media screen and (max-width: 475px) {
+#subscribe input[type="email"] {
+  width: 100%;
+}
+.button1 {
+  width: 100%;
+}
+}
+
+
+/* How it works */
+
+.hiw-image-scatter {
+  width:  100%;
+  float: none;
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding-top: 12px;
+}
+
+.hiw-image-trophy {
+width: 92%;
+float: none;
+display: block;
+margin: auto;
+padding-top: 33px;
+}
+
+.hiw-image-shield {
+  width: 75%;
+  text-align: center;
+  float: none;
+  display: block;
+  margin: auto;
+  padding-top: 32px;
+}
+
+.hiw-caption {
+  text-align: center;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+#how-it-works .col-4 {
+  width: 100%;
+}
+.hiw-image-scatter, .hiw-image-shield, .hiw-image-trophy {
+  width: 60%;
+}
+}
+
+
+/* FAQ */
+
+.faq {
+  width: 100%;
+  color: #E6E6E6;
+  background-color: #0040FF;
+}
+
+.faq-question {
+  font-weight: bold;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.faq-answer {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.faq a {
+  color: #E6E6E6;
+  font-weight: bold;
+  margin-left: 250px;
+}
+
+@media screen and (max-width: 768px) {
+#faq .container {
+  width: 95%;
+}
+}
+
+/* contact */
+
+.follow-us {
+  font-weight: bold;
+}
+
+/* social media text */
+
+.sm-text{
+  text-decoration: none;
+  color: #595959;
+}
+
+#contact {
+  bottom: 0;
+}
+
+#contact .fa:hover {
+opacity: 0.7;
+}
+
+.contact-label {
+  line-height: 1.5;
+  color: #595959;
+  float: left;
+  margin-bottom: 16px;
+}
+
+.input-box, textarea {
+width: 100%;
+border-radius: 4px;
+font-family: Verdana;
+font-size: 16px;
+float: right;
+margin-bottom: 14px;
+padding: 5px
+}
+
+#contact input:focus {
+  border: 2px solid #0066FF;
+}
+
+#contact textarea:focus {
+  border: 2px solid #0066FF;
+}
+
+.contact-button {
+font-size: 16px;
+padding: 5px 16px;
+float: left;
+}
+
+#contact #email-text {
+color: #595959;
+display: inline;
+}
+
+#contact a {
+text-decoration: none;
+color: #595959;
+}
+
+#contact img.center {
+vertical-align: middle;
+padding-right: 10px;
+}
+
+#contact a:hover {
+opacity: 0.7;
+}
+
+#contact p {
+margin-top: 5px;
+}
+
+#contact-thank-you {
+display: none;
+margin-left: 100px;
+color: green;
+}
+
+@media screen and (max-width: 1000px) {
+#contact-responsive,
+#contact-responsive {
+  float: none;
+  width: 100%;
+}
+}
+
+/* footer */
+
+#footer {
+  padding: 20px;
+  margin-top: 425px;
+  height: 60px; 
+  color: #FFFFFF;
+  background-color: #0066FF;
+  text-align: center;
+}
+
+.footer-text {
+  margin-top: 0
+}

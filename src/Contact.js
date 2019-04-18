@@ -3,7 +3,7 @@ import React from 'react';
 import SocialContact from './SocialContact';
 import FormContact from './FormContact';
 
-const Contact = () => {
+const Contact = ({ contactMail }) => {
   
   return (
     <section id="contact">
@@ -12,7 +12,7 @@ const Contact = () => {
         <SocialContact />
       </div>
       <div className="col-8" id="contact-responsive">
-        <FormContact />
+        <FormContact contactMail={ contactMail }/>
       </div>
     </section>
   )

@@ -13,7 +13,7 @@ const Sub = conn.define('sub', {
 
   subStatus: {
     type: conn.Sequelize.ENUM('pending', 'subscribed', 'unsubscribed'),
-    defaultValue: 'pending',
+    defaultValue: 'subscribed',
     allowNull: false
   },
 

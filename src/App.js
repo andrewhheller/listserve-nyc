@@ -15,8 +15,6 @@ class App extends Component {
   constructor() {
     super();
 
-    this.createEmail = this.createEmail.bind(this);
-    this.contactMail = this.contactMail.bind(this);
   }
 
   componentDidMount() {

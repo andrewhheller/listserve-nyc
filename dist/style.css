@@ -525,6 +525,25 @@ padding-top: 33px;
 
 /* contact */
 
+/* email contact for confirmation */
+.confirm-contact {
+  border-radius: 10px;
+  text-align: center;
+  width: 10em;
+  padding: 5px;
+  background-color: green;
+  color: white;
+}
+
+.error-contact {
+  border-radius: 10px;
+  text-align: center;
+  width: 10em;
+  padding: 5px;
+  background-color: red;
+  color: white;
+}
+
 .follow-us {
   font-weight: bold;
 }

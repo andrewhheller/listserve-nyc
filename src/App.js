@@ -16,43 +16,48 @@ class App extends Component {
     super();
 
     this.createEmail = this.createEmail.bind(this);
+    this.contactMail = this.contactMail.bind(this);
   }
 
   componentDidMount() {
 
     const bounding = document.getElementById('FAQ').getBoundingClientRect();
   
-
     window.addEventListener('scroll', () => {
-      console.log(bounding)
+      // console.log(bounding)
       if (
         bounding.top < window.innerHeight
       ) {
-        console.log('In the viewport!');
+        // console.log('In the viewport!');
       } else {
-        console.log('Not in the viewport');
+        // console.log('Not in the viewport');
       }
       
     })
-
   }
 
   createEmail(email) {
     return axios.post('/api/sub', email)
       .then(response => response.data)
       .catch(error => console.log(error))
-  }
+  };
+
+  contactMail(contact) {
+    return axios.post('/api/contact', contact)
+      .then(response => response.data)
+      .catch(error => console.log(error))
+  };
 
   render() {
-    const { createEmail } = this;
+    const { createEmail, contactMail } = this;
 
     return(
       <div>
         <Header />
-        <Main createEmail={createEmail} />
+        <Main createEmail={ createEmail } />
         <HowItWorks />
         <FAQ />
-        <Contact />
+        <Contact contactMail = { contactMail } />
         <Footer />
         {/* <Modal /> */}
       </div>

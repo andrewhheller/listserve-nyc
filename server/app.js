@@ -12,6 +12,7 @@ const contactRoute = require('./api/contact');
 
 app.use(express.static('dist'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // APIR routes
 app.use('/api/sub', subRoute);

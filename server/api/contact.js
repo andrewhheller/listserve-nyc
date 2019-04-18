@@ -3,13 +3,15 @@ const router = express.Router();
 
 const transporter = require('../utils/email');
 
+
+
 router.post('/', (req, res, next) => {
   const name = req.body.name;
-  const mail = req.body.mail;
+  const email = req.body.email;
   const message = req.body.message;
   const content = `
     name: ${ name }
-    email: ${ mail }
+    email: ${ email }
     message: ${ message }
   `;
 

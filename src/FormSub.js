@@ -4,13 +4,29 @@ import { modal, showModal } from './Modal';
 
 import { formFocus } from './utils';
 
+
+
+const afterGoodEmailSub = {
+  email: '',
+  error: '',
+  confirm: 'Great job! You are now subscribed.'
+}
+
+// email not updated in state so that email stays in field so that user can review
+const afterBadEmailSub = {
+  error: 'Oops, that email address is already subscribed.',
+  confirm: ''
+}
+
+
 class FormSub extends Component {
 
   constructor() {
     super();
     this.state = {
       email: '',
-      error: ''
+      error: '',
+      confirm: ''
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,20 +46,19 @@ class FormSub extends Component {
     createEmail(this.state)
       .then(result => { // result is array where [0] = instance and [1] = wasCreated boolean
         if(result[1]) { // wasCreated boolean
-          console.log('email created, load modal')
-          this.setState({ email: '' });
-          showModal();
+          // console.log('email created, load modal')
+          this.setState( afterGoodEmailSub )
+          // showModal();
         }
         else {
-          console.log('email exists')
-          this.setState({ error: 'Oops, that email address is already subscribed.'})
+          this.setState( afterBadEmailSub )
         }
       })
       .catch(error => console.log(error));
   }
 
   render() {
-    const { email, error } = this.state;
+    const { email, confirm, error } = this.state;
     const { handleChange, handleSubmit } = this;
 
     return (
@@ -66,6 +81,10 @@ class FormSub extends Component {
          
           {
             error ? (<div className="error">{ error }</div>) : null
+          }
+ 
+          {
+            confirm ? (<div className="confirm">{ confirm }</div>) : null
           }
           
         </div>

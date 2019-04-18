@@ -4,13 +4,23 @@
   box-sizing: border-box;
 }
 
-/* email error notification */
+/* email subscribe error notification */
 .error {
   border-radius: 10px;
   width: 30em;
   padding: 5px;
   margin: 0px auto;
   background-color: red;
+  color: white;
+}
+
+/* email subscribe confirmation notification */
+.confirm {
+  border-radius: 10px;
+  width: 30em;
+  padding: 5px;
+  margin: 0px auto;
+  background-color: green;
   color: white;
 }
 

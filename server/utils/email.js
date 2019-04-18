@@ -12,28 +12,8 @@ const transporter = nodemailer.createTransport({
   }
 })
 
-// mail options
-// const mailOptions = {
-//   from: 'listservenyc.noreply@gmail.com',
-//   to: 'andrewhheller@gmail.com',
-//   subject: 'website contact',
-//   text: 'hello world!'
-// };
-
-// transporter.sendMail(mailOptions, function (err, info) {
-
-//   if(err) {
-//     console.log(err);
-//   }
-
-//   else {
-//     console.log(info);
-//   }
-
-// });
-
 // verify email connection
-transporter.verify((error, success) => {
+transporter.verify((error) => {
   if (error) {
     console.log(error)
   }

@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
 
+const sendSuccess = {
+  contact: {
+    name: '',
+    email: '',
+    message: ''
+  },
+  confirm: 'Message sent!'
+}
 
+const sendFailure = {
+  error: 'Message failure.'
+}
 
 class FormContact extends Component {
 
   constructor() {
     super();
     this.state = {
-      name: '',
-      email: '',
-      message: ''
+      contact: {
+        name: '',
+        email: '',
+        message: ''
+      },
+      error: '',
+      confirm: ''
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -17,9 +32,8 @@ class FormContact extends Component {
   }
 
   handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+    const contact = Object.assign({}, this.state.contact, { [event.target.name]: event.target.value })
+    this.setState({ contact })
     // console.log(this.state)
   }
 
@@ -27,11 +41,20 @@ class FormContact extends Component {
     const { contactMail } = this.props;
 
     event.preventDefault();
-    contactMail(this.state);
+    contactMail(this.state.contact)
+      .then(response => {
+        if(response.msg === 'success') {
+          this.setState( sendSuccess )
+        }
+        else if (response.msg === 'fail') {
+          this.setState( sendFailure )
+        }
+      })
   }
 
   render() {
-    const { name, email, message } = this.state;
+    const { name, email, message } = this.state.contact;
+    const { confirm, error } = this.state;
     const { handleChange, handleSubmit } = this;
 
     return (
@@ -70,11 +93,21 @@ class FormContact extends Component {
         >
         </textarea>
         
-        <div className="col-8" id="contact-responsive">
+        <div className="col-2" id="contact-responsive">
           <button className="contact-button" type="submit" value="Send">Send</button>
         </div>
 
-      </form>
+        <div className="col-3">
+          {
+            confirm ? (<div className="confirm-contact">{ confirm }</div>) : null
+          }
+
+          {
+            error ? (<div className="error-contact">{ error }</div>) : null
+          }
+        </div>
+
+       </form>
     )
   }
 

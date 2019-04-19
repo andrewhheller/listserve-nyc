@@ -1,14 +1,17 @@
 // import module
 const nodemailer = require('nodemailer');
 
+const GMAIL_UNAME = process.env.GMAIL_UNAME;
+const GMAIL_PWD = process.env.GMAIL_PWD; 
+
 // transporter with auth options
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
   secure: true,
   auth: {
-    user: 'listservenyc.noreply@gmail.com',
-    pass: 'N0r3plii'
+    user: GMAIL_UNAME,
+    pass: GMAIL_PWD
   }
 })
 

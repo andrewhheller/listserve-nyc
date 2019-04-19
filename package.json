@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "dotenv": "^7.0.0",
     "express": "^4.16.3",
+    "fs": "0.0.1-security",
     "nodemailer": "^6.1.0",
     "pg": "^7.4.3",
     "react": "^16.4.2",
@@ -35,6 +37,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "./node_modules/webpack/bin/webpack.js",
+    "gmail-setup": "node gmail-setup.js",
     "start:dev": "npm run webpack -- --watch --mode=development & DATABASE_URL=postgres://localhost/tellnyc_test nodemon server.js --ignore src/ --ignore dist"
   }
 }

@@ -3,7 +3,8 @@ const router = express.Router();
 
 const transporter = require('../utils/email');
 
-
+const FROM_EMAIL = process.env.FROM_EMAIL;
+const TO_EMAIL = process.env.TO_EMAIL; 
 
 router.post('/', (req, res, next) => {
   const name = req.body.name;
@@ -16,8 +17,8 @@ router.post('/', (req, res, next) => {
   `;
 
   const mailOptions = {
-    from: 'listservenyc.noreply@gmail.com',
-    to: 'andrewhheller@gmail.com',
+    from: FROM_EMAIL,
+    to: TO_EMAIL,
     subject: 'website contact',
     text: content
   }
@@ -25,9 +26,10 @@ router.post('/', (req, res, next) => {
   transporter.sendMail(mailOptions, (error, data) => {
 
     if(error) {
-      res.json({
-        msg: 'fail'
-      })
+      // res.json({
+      //   msg: 'fail'
+      // })
+      console.log(error)
     }
     else {
       res.json({

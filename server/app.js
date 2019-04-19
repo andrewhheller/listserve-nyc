@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+dotenv.config();
 
 const express = require('express');
 const app = express();
@@ -12,7 +13,7 @@ const contactRoute = require('./api/contact');
 
 // ### MIDDLEWARE ###
 
-dotenv.config();
+
 
 app.use(express.static('dist'));
 app.use(bodyParser.json());

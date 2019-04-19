@@ -1,0 +1,8 @@
+# from / to email addresses (contact form)
+export FROM_EMAIL="enter from email address here"
+export TO_EMAIL="enter target email address here"
+
+
+# mail credentials
+export GMAIL_UNAME="your email here"
+export GMAIL_PWD="your password here"

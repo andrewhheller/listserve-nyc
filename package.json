@@ -1,8 +1,8 @@
 {
-  "name": "project-tellMe",
+  "name": "listserve | NYC",
   "author": "Andrew Heller",
   "version": "1.0.0",
-  "description": "project tellMe NYC",
+  "description": "listserve | NYC",
   "main": "server/server.js",
   "babel": {
     "presets": [

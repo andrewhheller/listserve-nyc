@@ -1,8 +1,8 @@
 {
-  "name": "listserve | NYC",
+  "name": "listserve-NYC",
   "author": "Andrew Heller",
   "version": "1.0.0",
-  "description": "listserve | NYC",
+  "description": "email lottery for NYC | share your NY story",
   "main": "server/server.js",
   "babel": {
     "presets": [

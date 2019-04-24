@@ -10,14 +10,14 @@ const SocialContact = () => {
       <p className="follow-us">Follow Us!</p>
 
       <p>
-        <a href="https://www.facebook.com/andrewhheller" target="_blank">
+        <a href="https://www.facebook.com" target="_blank">
           <img className="center" src="./img/fb-icon-32.png" alt="facebook icon" />
           facebook.com/listservenyc
         </a>
       </p>
 
       <p>
-        <a href="https://www.twitter.com/andrewhheller" target="_blank">
+        <a href="https://www.twitter.com" target="_blank">
           <img className="center" src="./img/twitter-icon-32.png" alt="twitter icon" />
           twitter.com/listservenyc
         </a>

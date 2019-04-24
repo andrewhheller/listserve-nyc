@@ -14,7 +14,7 @@ const afterGoodEmailSub = {
 
 // email not updated in state so that email stays in field so that user can review
 const afterBadEmailSub = {
-  error: 'Oops, that email address is already subscribed.',
+  error: 'Oops, email address is already subscribed.',
   confirm: ''
 }
 

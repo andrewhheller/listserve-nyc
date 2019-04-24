@@ -5457,7 +5457,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Footer = function Footer() {\n\n  return _react2.default.createElement(\n    \"section\",\n    { id: \"footer\" },\n    _react2.default.createElement(\n      \"p\",\n      { className: \"footer-text\" },\n      \"\\xA9 2018 listserve|NYC.  All Rights Reserved.\"\n    )\n  );\n};\n\nexports.default = Footer;\n\n//# sourceURL=webpack:///./src/Footer.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Footer = function Footer() {\n\n  return _react2.default.createElement(\n    \"section\",\n    { id: \"footer\" },\n    _react2.default.createElement(\n      \"p\",\n      { className: \"footer-text\" },\n      \"\\xA9 2018 listserve|NYC.\",\n      _react2.default.createElement(\"br\", null),\n      \"All Rights Reserved.\"\n    )\n  );\n};\n\nexports.default = Footer;\n\n//# sourceURL=webpack:///./src/Footer.js?");
 
 /***/ }),
 

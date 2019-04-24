@@ -659,11 +659,11 @@ color: green;
 }
 
 @media screen and (max-width: 1000px) {
-#contact-responsive,
-#contact-responsive {
-  float: none;
-  width: 100%;
-}
+  #contact-responsive,
+  #contact-responsive {
+    float: none;
+    width: 100%;
+  }
 }
 
 /* footer */
@@ -671,7 +671,7 @@ color: green;
 #footer {
   padding: 20px;
   margin-top: 425px;
-  height: 60px; 
+  height: autp; 
   color: #FFFFFF;
   background-color: #0066FF;
   text-align: center;
@@ -680,3 +680,15 @@ color: green;
 .footer-text {
   margin-top: 0
 }
+
+@media screen and (max-width: 415px) {
+  #footer {
+    /* padding: 20px;
+    margin-top: 425px; */
+    /* height: 120px;  */
+    /* color: #FFFFFF;
+    background-color: #0066FF;
+    text-align: center; */
+  }
+}
+ 

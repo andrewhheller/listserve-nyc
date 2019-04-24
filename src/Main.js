@@ -16,7 +16,7 @@ const Main = ({ createEmail }) => {
           <div className="row">
             <div className="col-12">
               <div id="transparent-box">
-                <h1>listserve | NYC</h1>
+                <h1>listserve NYC</h1>
                 <h2>What would you say to all of New York City?</h2>
                 <br />
               </div>

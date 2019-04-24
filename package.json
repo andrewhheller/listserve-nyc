@@ -3,6 +3,7 @@
   "author": "Andrew Heller",
   "version": "1.0.0",
   "description": "listserveNYC",
+  "email lottery for NYC | share your NY story",
   "main": "server/server.js",
   "babel": {
     "presets": [

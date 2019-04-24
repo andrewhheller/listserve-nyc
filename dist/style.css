@@ -10,7 +10,7 @@
   width: 30em;
   padding: 5px;
   margin: 0px auto;
-  background-color: red;
+  background-color: #FF0000;
   color: white;
 }
 
@@ -20,8 +20,21 @@
   width: 30em;
   padding: 5px;
   margin: 0px auto;
-  background-color: green;
+  background-color: #009933;
   color: white;
+}
+
+@media screen and (max-width: 520px) {
+  .confirm {
+    font-size: 14px;
+    margin-top: 10px;
+    width: 80%;
+  }
+  .error {
+    font-size: 14px;
+    margin-top: 10px;
+    width: 80%;
+  }
 }
 
 /* website dim when modal opens */

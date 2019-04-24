@@ -88,10 +88,10 @@ body {
 /*responsive media query for main container */
 
 @media screen and (max-width: 520px) {
-.container {
-  width: 95%;
-  margin: auto;
-}
+  .container {
+    width: 95%;
+    margin: auto;
+  }
 }
 
 
@@ -517,10 +517,26 @@ padding-top: 33px;
   margin-left: 250px;
 }
 
-@media screen and (max-width: 768px) {
-#faq .container {
-  width: 95%;
-}
+@media screen and (max-width: 800px) {
+  
+  #faq .container {
+    width: 95%;
+  }
+
+  .faq-question {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .faq-answer {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .faq a {
+    margin-left: 50px;
+  }
+
 }
 
 /* contact */

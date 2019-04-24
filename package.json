@@ -1,8 +1,8 @@
 {
-  "name": "listserve | NYC",
+  "name": "listserveyNYC",
   "author": "Andrew Heller",
   "version": "1.0.0",
-  "description": "listserve | NYC",
+  "description": "listserveNYC",
   "main": "server/server.js",
   "babel": {
     "presets": [

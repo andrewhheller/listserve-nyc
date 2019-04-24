@@ -592,6 +592,12 @@ header .icon {
   color: white;
 }
 
+@media screen and (max-width: 800px) {
+  .confirm-contact, .error-contact {
+    margin-top: -5px
+  }
+}
+
 .follow-us {
   font-weight: bold;
 }
@@ -608,7 +614,7 @@ header .icon {
 }
 
 #contact .fa:hover {
-opacity: 0.7;
+  opacity: 0.7;
 }
 
 .contact-label {
@@ -619,13 +625,13 @@ opacity: 0.7;
 }
 
 .input-box, textarea {
-width: 100%;
-border-radius: 4px;
-font-family: Verdana;
-font-size: 16px;
-float: right;
-margin-bottom: 14px;
-padding: 5px
+  width: 100%;
+  border-radius: 4px;
+  font-family: Verdana;
+  font-size: 16px;
+  float: right;
+  margin-bottom: 14px;
+  padding: 5px
 }
 
 #contact input:focus {
@@ -637,38 +643,38 @@ padding: 5px
 }
 
 .contact-button {
-font-size: 16px;
-padding: 5px 16px;
-float: left;
+  font-size: 16px;
+  padding: 5px 16px;
+  float: left;
 }
 
 #contact #email-text {
-color: #595959;
-display: inline;
+  color: #595959;
+  display: inline;
 }
 
 #contact a {
-text-decoration: none;
-color: #595959;
+  text-decoration: none;
+  color: #595959;
 }
 
 #contact img.center {
-vertical-align: middle;
-padding-right: 10px;
+  vertical-align: middle;
+  padding-right: 10px;
 }
 
 #contact a:hover {
-opacity: 0.7;
+  opacity: 0.7;
 }
 
 #contact p {
-margin-top: 5px;
+  margin-top: 5px;
 }
 
 #contact-thank-you {
-display: none;
-margin-left: 100px;
-color: green;
+  display: none;
+  margin-left: 100px;
+  color: green;
 }
 
 @media screen and (max-width: 1000px) {

@@ -37,7 +37,7 @@ describe('DATA LAYER | email subscriptions', () => {
         .then(emailSubs => expect(emailSubs.length).to.equal(10))
     });
 
-    it('the email for exists', () => {
+    it('the email "picard@enterprise.com" exists', () => {
       return Sub.findOne({
         where: {
           email: 'picard@enterprise.com'
@@ -46,7 +46,7 @@ describe('DATA LAYER | email subscriptions', () => {
         .then(email => expect(email.email).to.equal('picard@enterprise.com'))
     });
 
-    it('the email kirk@enterprise.com does NOT exist', () => {
+    it('the email "kirk@enterprise.com" does NOT exist', () => {
       return Sub.findOne({
         where: {
           email: 'kirk@enterprise.com'

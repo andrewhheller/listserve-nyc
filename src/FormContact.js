@@ -34,7 +34,6 @@ class FormContact extends Component {
   handleChange(event) {
     const contact = Object.assign({}, this.state.contact, { [event.target.name]: event.target.value })
     this.setState({ contact })
-    // console.log(this.state)
   }
 
   handleSubmit(event) {

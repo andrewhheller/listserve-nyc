@@ -638,8 +638,13 @@ header .icon {
   border: 2px solid #0066FF;
 }
 
+/* remove default red border arround required texarea only in Firefox! */
 #contact textarea:focus {
   border: 2px solid #0066FF;
+}
+
+#contact textarea:required {
+  box-shadow: none;
 }
 
 .contact-button {

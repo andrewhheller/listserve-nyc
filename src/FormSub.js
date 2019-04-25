@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import { modal, showModal } from './Modal';
 
-import { formFocus } from './utils';
-
 
 
 const afterGoodEmailSub = {

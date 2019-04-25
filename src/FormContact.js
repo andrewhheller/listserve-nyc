@@ -92,7 +92,7 @@ class FormContact extends Component {
         >
         </textarea>
         
-        <div className="col-2" id="contact-responsive">
+        <div className="col-1mid" id="contact-responsive">
           <button className="contact-button" type="submit" value="Send">Send</button>
         </div>
 

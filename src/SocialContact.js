@@ -12,14 +12,14 @@ const SocialContact = () => {
       <p>
         <a href="https://www.facebook.com" target="_blank">
           <img className="center" src="./img/fb-icon-32.png" alt="facebook icon" />
-          facebook.com/listservenyc
+          facebook.com
         </a>
       </p>
 
       <p>
         <a href="https://www.twitter.com" target="_blank">
           <img className="center" src="./img/twitter-icon-32.png" alt="twitter icon" />
-          twitter.com/listservenyc
+          twitter.com
         </a>
       </p>
       

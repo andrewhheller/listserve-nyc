@@ -350,6 +350,12 @@ header .icon {
 
 /* showcase */
 
+#darken {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.33);
+}
+
 #showcase {
   margin-top: 39px;
   background: url('img/backgroundCurrent.jpeg');
@@ -357,7 +363,6 @@ header .icon {
   background-size: cover;
   background-position: center;
   color: #FFFFFF;
-  border: 3px green solid;
   height: 600px;
 }
 
@@ -393,6 +398,7 @@ header .icon {
   font-family: Verdana;
   font-weight: normal;
   text-align: center;
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
@@ -622,6 +628,8 @@ header .icon {
 
 #contact {
   bottom: 0;
+  width: 90%;
+  margin: 0 auto;
 }
 
 #contact .fa:hover {

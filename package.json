@@ -40,6 +40,6 @@
     "gmail-setup": "node gmail-setup.js",
     "start:dev": "npm run webpack -- --watch --mode=development & DATABASE_URL=postgres://localhost/tellnyc_test nodemon server.js --ignore src/ --ignore dist",
     "start": "node server/server.js",
-    "postinstall": "npm run weback"
+    "postinstall": "npm run webpack"
   }
 }

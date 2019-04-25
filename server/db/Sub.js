@@ -32,6 +32,7 @@ Sub.genPool = () => {
   })
 }
 
+// generate winner
 Sub.winner = () => {
   return Sub.genPool()
     .then(emails => emails[Math.floor(Math.random() * emails.length)])

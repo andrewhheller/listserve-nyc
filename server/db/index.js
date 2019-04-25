@@ -5,41 +5,29 @@ const Contact = require('./Contact');
 
 Sub.belongsTo(Contact);
 
+
+
 const syncAndSeed = () => {
-  conn.sync({ force: true })
+  return conn.sync({ force: true })
     .then(() => {
-      Sub.create({
-        email: 'picard@enterprise.com',
-        subStatus: 'subscribed'
-      }),
-      Sub.create({
-        email: 'riker@enterprise.com',
-        subStatus: 'subscribed'
-      }),
-      Sub.create({
-        email: 'data@enterprise.com',
-        subStatus: 'subscribed'
-      }),
-      Sub.create({
-        email: 'geordi@enterprise.com'
-      }),
-      Sub.create({
-        email: 'worf@enterprise.com',
-        subStatus: 'unsubscribed'
-      }),
-      Sub.create({
-        email: 'deanna@enterprise.com'
-      }),
-      Sub.create({
-        email: 'beverly@enterprise.com'
-      }),
-      Sub.create({
-        email: 'wesley@enterprise.com',
-        subStatus: 'subscribed'
-      }),
-      Sub.create({
-        email: 'barclay@enterprise.com'
-      }),
+
+      // preset email bank
+      const emails = [
+        'picard@enterprise.com',
+        'riker@enterprise.com',
+        'data@enterprise.com',
+        'geordi@enterprise.com',
+        'worf@enterprise.com',
+        'deanna@enterprise.com',
+        'beverly@enterprise.com',
+        'wesley@enterprise.com',
+        'barclay@enterprise.com'
+      ]
+
+      // create email row with element email from above
+      emails.forEach(email => Sub.create({ email }))
+
+      // set winner row
       Sub.create({
         email: 'andrew@enterprise.com',
         subStatus: 'subscribed',
@@ -66,9 +54,6 @@ const syncAndSeed = () => {
       ])
     })
 }
-
-
-
 
 
 module.exports = {

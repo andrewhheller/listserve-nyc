@@ -35,7 +35,7 @@
     "webpack-cli": "^3.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "DATABASE_URL=postgres://localhost/tellnyc_test nodemon ./node_modules/mocha/bin/mocha ./test/db-specs.js",
     "webpack": "./node_modules/webpack/bin/webpack.js",
     "gmail-setup": "node gmail-setup.js",
     "start:dev": "npm run webpack -- --watch --mode=development & DATABASE_URL=postgres://localhost/tellnyc_test nodemon server.js --ignore src/ --ignore dist"

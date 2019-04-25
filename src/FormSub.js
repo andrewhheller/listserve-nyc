@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { modal, showModal } from './Modal';
+import showModal from './Modal';
 
-import { formFocus } from './utils';
+
 
 
 

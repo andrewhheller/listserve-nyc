@@ -198,7 +198,7 @@ body {
 [class*="col-"] {
   float: left;
   padding: 5px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .col-1 {width: 8.33%;}
@@ -216,7 +216,7 @@ body {
 .col-12 {width: 100%;}
 
 .row {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 /* Clear floats after the columns */

@@ -71,7 +71,7 @@ class FormSub extends Component {
               type="email"
               name="email"
               value={email}
-              placeholder="email address..."
+              placeholder="enter email address"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
               required
               onChange={handleChange}

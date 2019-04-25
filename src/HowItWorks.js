@@ -13,11 +13,11 @@ const HowItWorks = () => {
           </div>
           <div className="col-4">
             <img className="hiw-image-trophy" src="img/email-trophy.png" />
-            <p className="hiw-caption">Each week, one lucky person is selected to send an email to all other subscribers!</p>
+            <p className="hiw-caption">Each week, one person is chosen to send an email to all other subscribers!</p>
           </div>
           <div className="col-4">
             <img className="hiw-image-shield" src="img/email-privacy-blue.png" />
-            <p className="hiw-caption">If selected, you can choose if you want your email address visible or kept private.</p>
+            <p className="hiw-caption">If selected, you can choose to share your email address or keep it  private.</p>
           </div>
         </div>
         <br />

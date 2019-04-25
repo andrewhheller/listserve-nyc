@@ -26,10 +26,10 @@ router.post('/', (req, res, next) => {
   transporter.sendMail(mailOptions, (error, data) => {
 
     if(error) {
-      // res.json({
-      //   msg: 'fail'
-      // })
-      console.log(error)
+      res.json({
+        msg: 'fail'
+      })
+      // console.log(error)
     }
     else {
       res.json({

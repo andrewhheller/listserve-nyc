@@ -4,6 +4,7 @@ import Modal from './Modal';
 
 
 
+// screen width below 800px
 const afterGoodEmailSub = {
   email: '',
   error: '',
@@ -11,11 +12,13 @@ const afterGoodEmailSub = {
 }
 
 // email not updated in state so that email stays in field so that user can review
+// all screen widths
 const afterBadEmailSub = {
   error: 'Oops, email address is already subscribed.',
   confirm: ''
 }
 
+// scree width above 800px
 const afterModalClose = {
   email: '',
   showModal: false
@@ -43,13 +46,11 @@ class FormSub extends Component {
   }
 
   handleModalOpen() {
-    this.setState({ showModal: true, email: '' });
-    console.log(this.state)
+    this.setState({ showModal: true });
   }
 
   handleModalClose() {
-    this.setState({ showModal: false })
-    console.log(this.state)
+    this.setState( afterModalClose )
   }
 
   handleChange(event) {

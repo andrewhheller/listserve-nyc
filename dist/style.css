@@ -46,7 +46,7 @@ textarea:required {
   }
 }
 
-/* website dim when modal opens */
+/* dim webdsite when modal opens */
 .modal {
   display: none; /* hidden by default */
   position: fixed; /* stay in place */
@@ -74,6 +74,15 @@ textarea:required {
   width: 50%;
   margin: auto;
 }
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
 
 /* the close button */
 .closeBtn {

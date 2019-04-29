@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { modal, showModal } from './Modal';
+import Modal from './Modal';
 
 
 
@@ -16,6 +16,12 @@ const afterBadEmailSub = {
   confirm: ''
 }
 
+const afterCloseModal = {
+  email: '',
+  error: '',
+  showModal: false
+}
+
 
 class FormSub extends Component {
 
@@ -24,11 +30,23 @@ class FormSub extends Component {
     this.state = {
       email: '',
       error: '',
-      confirm: ''
+      confirm: '',
+      showModal: false,
+      modalEmail: ''
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleModalOpen = this.handleModalOpen.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
+  }
+
+  handleModalOpen() {
+    this.setState({ showModal: true })
+  }
+
+  handleModalClose() {
+    this.setState( afterCloseModal )
   }
 
   handleChange(event) {
@@ -44,9 +62,8 @@ class FormSub extends Component {
     createEmail(this.state)
       .then(result => { // result is array where [0] = instance and [1] = wasCreated boolean
         if(result[1]) { // wasCreated boolean
-          // console.log('email created, load modal')
-          this.setState( afterGoodEmailSub )
-          // showModal();
+          this.handleModalOpen();
+          this.setState({ modalEmail: result[0].email })
         }
         else {
           this.setState( afterBadEmailSub )
@@ -58,9 +75,11 @@ class FormSub extends Component {
   render() {
     const { email, confirm, error } = this.state;
     const { handleChange, handleSubmit } = this;
+    const { showModal } = this.state;
 
     return (
       <form onSubmit={ handleSubmit }>
+      <Modal show={ showModal } modalEmail={ this.state.modalEmail } handleClose={ this.handleModalClose } />
 
         <div id="subscribe">
           <div className="row">

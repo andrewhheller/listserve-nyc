@@ -16,6 +16,11 @@ const afterBadEmailSub = {
   confirm: ''
 }
 
+const afterModalClose = {
+  email: '',
+  showModal: false
+}
+
 
 
 
@@ -38,11 +43,13 @@ class FormSub extends Component {
   }
 
   handleModalOpen() {
-    this.setState({ showModal: true, email: '', error: '' })
+    this.setState({ showModal: true, email: '' });
+    console.log(this.state)
   }
 
   handleModalClose() {
     this.setState({ showModal: false })
+    console.log(this.state)
   }
 
   handleChange(event) {
@@ -59,9 +66,9 @@ class FormSub extends Component {
       .then(result => { // result is array where [0] = instance and [1] = wasCreated boolean
         if(result[1]) { // wasCreated boolean
           
-          if(screen.width > 800) { // show modal
-            this.handleModalOpen();
+          if(screen.width > 800) { // show modal on wide screen width only (design)
             this.setState({ modalEmail: result[0].email })
+            this.handleModalOpen();
           }
 
           else {
@@ -69,7 +76,7 @@ class FormSub extends Component {
           }
      
         }
-        else {
+        else { // email submit error
           this.setState( afterBadEmailSub ) // show error blurb on all screen widths
         }
       })

@@ -73,6 +73,7 @@ textarea:required {
 .modal-content-text {
   width: 50%;
   margin: auto;
+  color: #262626;
 }
 
 .display-block {

@@ -7,7 +7,7 @@ import Modal from './Modal';
 const afterGoodEmailSub = {
   email: '',
   error: '',
-  confirm: 'Great job! You are now subscribed.'
+  confirm: 'Great job! Thank you for subscribing!'
 }
 
 // email not updated in state so that email stays in field so that user can review
@@ -16,11 +16,7 @@ const afterBadEmailSub = {
   confirm: ''
 }
 
-const afterCloseModal = {
-  email: '',
-  error: '',
-  showModal: false
-}
+
 
 
 class FormSub extends Component {
@@ -42,11 +38,11 @@ class FormSub extends Component {
   }
 
   handleModalOpen() {
-    this.setState({ showModal: true })
+    this.setState({ showModal: true, email: '', error: '' })
   }
 
   handleModalClose() {
-    this.setState( afterCloseModal )
+    this.setState({ showModal: false })
   }
 
   handleChange(event) {
@@ -62,11 +58,19 @@ class FormSub extends Component {
     createEmail(this.state)
       .then(result => { // result is array where [0] = instance and [1] = wasCreated boolean
         if(result[1]) { // wasCreated boolean
-          this.handleModalOpen();
-          this.setState({ modalEmail: result[0].email })
+          
+          if(screen.width > 800) { // show modal
+            this.handleModalOpen();
+            this.setState({ modalEmail: result[0].email })
+          }
+
+          else {
+            this.setState( afterGoodEmailSub ) // use blurb only
+          }
+     
         }
         else {
-          this.setState( afterBadEmailSub )
+          this.setState( afterBadEmailSub ) // show error blurb on all screen widths
         }
       })
       .catch(error => console.log(error));

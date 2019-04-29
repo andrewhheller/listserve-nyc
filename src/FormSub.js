@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import { modal, showModal } from './Modal';
+import Modal from './Modal';
 
 
 
 const afterGoodEmailSub = {
   email: '',
   error: '',
-  confirm: 'Great job! You are now subscribed.'
+  confirm: 'Great job! Thank you for subscribing!'
 }
 
 // email not updated in state so that email stays in field so that user can review
@@ -17,6 +17,8 @@ const afterBadEmailSub = {
 }
 
 
+
+
 class FormSub extends Component {
 
   constructor() {
@@ -24,11 +26,23 @@ class FormSub extends Component {
     this.state = {
       email: '',
       error: '',
-      confirm: ''
+      confirm: '',
+      showModal: false,
+      modalEmail: ''
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleModalOpen = this.handleModalOpen.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
+  }
+
+  handleModalOpen() {
+    this.setState({ showModal: true, email: '', error: '' })
+  }
+
+  handleModalClose() {
+    this.setState({ showModal: false })
   }
 
   handleChange(event) {
@@ -44,12 +58,19 @@ class FormSub extends Component {
     createEmail(this.state)
       .then(result => { // result is array where [0] = instance and [1] = wasCreated boolean
         if(result[1]) { // wasCreated boolean
-          // console.log('email created, load modal')
-          this.setState( afterGoodEmailSub )
-          // showModal();
+          
+          if(screen.width > 800) { // show modal
+            this.handleModalOpen();
+            this.setState({ modalEmail: result[0].email })
+          }
+
+          else {
+            this.setState( afterGoodEmailSub ) // use blurb only
+          }
+     
         }
         else {
-          this.setState( afterBadEmailSub )
+          this.setState( afterBadEmailSub ) // show error blurb on all screen widths
         }
       })
       .catch(error => console.log(error));
@@ -58,9 +79,11 @@ class FormSub extends Component {
   render() {
     const { email, confirm, error } = this.state;
     const { handleChange, handleSubmit } = this;
+    const { showModal } = this.state;
 
     return (
       <form onSubmit={ handleSubmit }>
+      <Modal show={ showModal } modalEmail={ this.state.modalEmail } handleClose={ this.handleModalClose } />
 
         <div id="subscribe">
           <div className="row">

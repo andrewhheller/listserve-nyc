@@ -75,7 +75,7 @@ class FormSub extends Component {
           else {
             this.setState( afterGoodEmailSub ) // use blurb only
           }
-     
+
         }
         else { // email submit error
           this.setState( afterBadEmailSub ) // show error blurb on all screen widths

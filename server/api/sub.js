@@ -20,43 +20,49 @@ router.get('/winner', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
+  
+  // grab email from POST
+  const email = req.body.email;
+
+  // find or create row
   Sub.findOrCreate({
     where: {
-      email: req.body.email
+      email
     }
   })
-    .then(result => res.send(result))  // result is array where [0] = instance and [1] = wasCreated boolean
-    .catch(error => next(error))
-});
+    .then(result => {
 
-router.post('/verify', (req, res, next) => {
+      // send result array to front end
+      res.send(result) // result is array where [0] = instance and [1] = wasCreated boolean
 
-  const subscriberMail = req.body.email;
-  const message = 'Thanks for subscribing!';
+      /* email verification message */
+      const message = 'Thanks for subscribing!';
   
-  const mailOptions = {
-    from: FROM_EMAIL,
-    to: subscriberMail,
-    subject: 'listserve NYC Subscription',
-    text: message
-  }
+      const mailOptions = {
+        from: FROM_EMAIL,
+        to: email,
+        subject: 'listserve NYC Subscription',
+        text: message
+      }
 
-  transporter.sendMail(mailOptions, (error, data) => {
+      transporter.sendMail(mailOptions, (error, data) => {
 
-    if(error) {
-      res.json({
-        msg: 'fail'
+        if(error) {
+          res.json({
+            msg: 'fail'
+          })
+        }
+
+        else {
+          res.json({
+            msg: 'success'
+          })
+        }
+
       })
-    }
 
-    else {
-      res.json({
-        msg: 'success'
-      })
-    }
-
-  })
-
+    })  
+    .catch(error => next(error))
 });
 
 

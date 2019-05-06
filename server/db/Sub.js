@@ -45,13 +45,15 @@ Sub.winner = () => {
 
       // find winner by ID and update prize status to winner
       Sub.findById(winner.id)
-        .then(sub => sub.update({ prize: 'winner' }))
+        .then(sub => {
+          sub.update({ prize: 'winner' })
+        })
 
       // return winner (will be sent back by API)
       return winner;
     })
 }
 
-
+console.log(Sub.winner());
 
 module.exports = Sub;

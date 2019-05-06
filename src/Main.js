@@ -18,14 +18,13 @@ const Main = ({ createEmail }) => {
               <div id="transparent-box">
                 <br />
                 <br />
-                {/* <br /> */}
                 <h1>listserve NYC</h1>
                 <h2>What would you say to all of New York City?</h2>
                 <br />
               </div>
             </div>
           </div>
-          <FormSub createEmail={createEmail} />
+          <FormSub createEmail={ createEmail } />
         </div>
       </div>
 	  </section>

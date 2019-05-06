@@ -8,31 +8,9 @@ import HowItWorks from './HowItWorks';
 import FAQ from './FAQ';
 import Contact from './Contact';
 import Footer from './Footer';
-import Modal from './Modal';
+
 
 class App extends Component {
-
-  constructor() {
-    super();
-
-  }
-
-  componentDidMount() {
-
-    const bounding = document.getElementById('FAQ').getBoundingClientRect();
-  
-    window.addEventListener('scroll', () => {
-      // console.log(bounding)
-      if (
-        bounding.top < window.innerHeight
-      ) {
-        // console.log('In the viewport!');
-      } else {
-        // console.log('Not in the viewport');
-      }
-      
-    })
-  }
 
   createEmail(email) {
     return axios.post('/api/sub', email)
@@ -52,12 +30,11 @@ class App extends Component {
     return(
       <div>
         <Header />
-        <Main createEmail={ createEmail } />
+        <Main createEmail={ createEmail } s/>
         <HowItWorks />
         <FAQ />
         <Contact contactMail = { contactMail } />
         <Footer />
-        {/* <Modal /> */}
       </div>
     )
   }

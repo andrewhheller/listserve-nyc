@@ -1,5 +1,7 @@
 const conn = require('./conn');
 
+const hash = require('string-hash');
+
 const Sub = require('./Sub');
 const Contact = require('./Contact');
 
@@ -30,7 +32,7 @@ const syncAndSeed = () => {
       // set winner row
       Sub.create({
         email: 'andrew@enterprise.com',
-        subStatus: 'subscribed',
+        subStatus: 'verified',
         prize: 'winner'
       })
     })

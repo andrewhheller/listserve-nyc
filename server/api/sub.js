@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const hash = require('string-hash');
 
 const transporter = require('../utils/email');
 
@@ -36,13 +37,18 @@ router.post('/', (req, res, next) => {
       res.send(result) // result is array where [0] = instance and [1] = wasCreated boolean
 
       /* email verification message */
-      const message = 'Thanks for subscribing!';
+      const message =
+        `
+          <p>Thanks for subscribing!</p>
+          <p>Please click
+            <a href="http://${ req.get('host') }/api/sub/verify/${ hash(email) }" target="blank">here</a>
+          to confirm your subscription.</p>`
   
       const mailOptions = {
         from: FROM_EMAIL,
         to: email,
         subject: 'listserve NYC Subscription',
-        text: message
+        html: message
       }
 
       transporter.sendMail(mailOptions, (error, data) => {
@@ -65,6 +71,25 @@ router.post('/', (req, res, next) => {
     .catch(error => next(error))
 });
 
+router.get('/verify/:hash', (req, res, next) => {
+
+  Sub.findOne({
+    where: {
+      verifyHash: req.params.hash
+    }
+  })
+    .then(sub => {
+      if(!sub) {
+        res.send('Email not verified.')
+      }
+      else {
+        sub.update({ subStatus: 'verified' })
+        res.send('Email verified, welcome to the listserve!')
+      }
+      
+    })
+    .catch(error => next(error))
+});
 
 
 

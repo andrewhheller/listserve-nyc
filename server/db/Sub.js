@@ -72,6 +72,4 @@ Sub.winner = () => {
     })
 }
 
-console.log(Sub.winner());
-
 module.exports = Sub;

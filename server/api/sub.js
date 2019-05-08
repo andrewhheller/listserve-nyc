@@ -36,13 +36,16 @@ router.post('/', (req, res, next) => {
       res.send(result) // result is array where [0] = instance and [1] = wasCreated boolean
 
       /* email verification message */
-      const message = 'Thanks for subscribing!';
+      const message =
+        `Thanks for subscribing!
+         Please click <a href="www.google.com>here</a> to confirm your subscription.
+        `
   
       const mailOptions = {
         from: FROM_EMAIL,
         to: email,
         subject: 'listserve NYC Subscription',
-        text: message
+        html: '<p>Thanks for subscribing!</p>  <p>Please click <a href="http://www.google.com" target="blank">here</a> to confirm your subscription.</p>'
       }
 
       transporter.sendMail(mailOptions, (error, data) => {

@@ -42,7 +42,8 @@ router.post('/', (req, res, next) => {
           <p>Thanks for subscribing!</p>
           <p>Please click
             <a href="http://${ req.get('host') }/api/sub/verify/${ hash(email) }" target="blank">here</a>
-          to confirm your subscription.</p>`
+          to confirm your subscription.</p>
+        `
   
       const mailOptions = {
         from: FROM_EMAIL,

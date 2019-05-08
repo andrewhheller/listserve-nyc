@@ -13,8 +13,8 @@ const syncAndSeed = () => {
   return conn.sync({ force: true })
     .then(() => {
 
-      // preset email bank
-      const emails = [
+      // preset email bank: SUBSCRIBED
+      const emailsSubscribed = [
         'picard@enterprise.com',
         'riker@enterprise.com',
         'data@enterprise.com',
@@ -26,15 +26,26 @@ const syncAndSeed = () => {
         'barclay@enterprise.com'
       ]
 
-      // create email row with element email from above
-      emails.forEach(email => Sub.create({ email }))
+      // preset email bank: VERIFIED
+      const emailsVerified = [
+        'janeway@voyager.com',
+        'chakotay@voyager.com',
+        'tuvok@voyager.com'
+      ]
 
-      // set winner row
+      // create email rows as subscribed
+      emailsSubscribed.forEach(email => Sub.create({ email, subStatus: 'subscribed' }))
+
+      // create email rows as verified
+      emailsVerified.forEach(email => Sub.create({ email, subStatus: 'verified' }))
+
+      // set winner row (verified)
       Sub.create({
         email: 'andrew@enterprise.com',
         subStatus: 'verified',
         prize: 'winner'
       })
+
     })
     .then(() => {
       Promise.all([

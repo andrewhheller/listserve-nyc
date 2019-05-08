@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 const hash = require('string-hash');
 
 const transporter = require('../utils/email');
@@ -85,7 +86,7 @@ router.get('/verify/:hash', (req, res, next) => {
       }
       else {
         sub.update({ subStatus: 'verified' })
-        res.send('Email verified, welcome to the listserve!')
+        res.redirect(`http://${ req.get('host') }/verify`)
       }
       
     })

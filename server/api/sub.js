@@ -80,7 +80,7 @@ router.get('/verify/:hash', (req, res, next) => {
   })
     .then(sub => {
       if(!sub) {
-        res.send('Email not found.')
+        res.send('Email not verified.')
       }
       else {
         sub.update({ subStatus: 'verified' })

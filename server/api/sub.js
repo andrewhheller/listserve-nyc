@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 const hash = require('string-hash');
 
 const transporter = require('../utils/email');

@@ -1,5 +1,6 @@
 const conn = require('./conn');
-const hash = require('string-hash')
+const bcrypt = require('bcrypt');
+const saltRounds = 12;
 
 const Sub = conn.define('sub', {
 
@@ -40,7 +41,9 @@ const Sub = conn.define('sub', {
 
 // generate and save hash of subscriber's email into verifyHash when subscription row is created (hook)
 Sub.beforeValidate(sub => {
-  sub.verifyHash = hash(sub.email);
+  return bcrypt.hash(sub.email, saltRounds)
+    .then(hash => sub.verifyHash = hash)
+    .catch(error => console.log(error))
 })
 
 // generate pool of current email subscribers who can win

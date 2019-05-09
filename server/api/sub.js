@@ -93,6 +93,24 @@ router.get('/verify/:hash', (req, res, next) => {
     .catch(error => next(error))
 });
 
+router.get('/unsub/:hash', (req, res, next) => {
+
+  Sub.findOne({
+    where: {
+      verifyHash: req.params.hash
+    }
+  })
+    .then(sub => {
+      if(!sub) {
+        res.send('Email does not exist.')
+      }
+      else {
+        sub.update({ subStatus: 'unsubscribed' })
+        res.send('email is gone.')
+      }
+    })
+
+})
 
 
 module.exports = router;

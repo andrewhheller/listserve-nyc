@@ -1,7 +1,5 @@
 const conn = require('./conn');
 
-const hash = require('string-hash');
-
 const Sub = require('./Sub');
 const Contact = require('./Contact');
 

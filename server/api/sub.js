@@ -37,13 +37,20 @@ router.post('/', (req, res, next) => {
       // send result array to front end
       res.send(result) // result is array where [0] = instance and [1] = wasCreated boolean
 
+      const hashedEmail = hash(email);
+
       /* email verification message */
       const message =
         `
           <p>Thanks for subscribing!</p>
           <p>Please click
-            <a href="http://${ req.get('host') }/api/sub/verify/${ hash(email) }" target="blank">here</a>
+            <a href="http://${ req.get('host') }/api/sub/verify/${ hashedEmail }" target="blank">here</a>
           to confirm your subscription.</p>
+          <br />
+          <br />
+          <p>Unsubscribe from the listserve
+            <a href="http://${ req.get('host') }/api/sub/unsub/${ hashedEmail }" target="blank">here</a>
+          </p>
         `
   
       const mailOptions = {

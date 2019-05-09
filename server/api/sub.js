@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const hash = require('string-hash');
 
 const transporter = require('../utils/email');
 
@@ -36,18 +35,16 @@ router.post('/', (req, res, next) => {
       // send result array to front end
       res.send(result) // result is array where [0] = instance and [1] = wasCreated boolean
 
-      const hashedEmail = hash(email);
-
       /* email verification message */
       const message =
         `
           <p>Thanks for subscribing!</p>
           <p>Please click
-            <a href="http://${ req.get('host') }/api/sub/verify/${ hashedEmail }" target="blank">here</a>
+            <a href="http://${ req.get('host') }/api/sub/verify/${ result[0].verifyHash }" target="blank">here</a>
           to confirm your subscription.</p>
           <br />
           <p>Unsubscribe from the listserve
-            <a href="http://${ req.get('host') }/api/sub/unsub/${ hashedEmail }" target="blank">here</a>
+            <a href="http://${ req.get('host') }/api/sub/unsub/${ result[0].verifyHash }" target="blank">here</a>
           </p>
         `
   

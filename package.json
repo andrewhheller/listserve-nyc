@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrypt": "^3.0.6",
     "dotenv": "^7.0.0",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
@@ -21,8 +22,7 @@
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
     "react-scrollspy": "^3.3.5",
-    "sequelize": "^4.38.0",
-    "string-hash": "^1.1.3"
+    "sequelize": "^4.38.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

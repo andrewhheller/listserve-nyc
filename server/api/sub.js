@@ -47,7 +47,6 @@ router.post('/', (req, res, next) => {
             <a href="http://${ req.get('host') }/api/sub/verify/${ hashedEmail }" target="blank">here</a>
           to confirm your subscription.</p>
           <br />
-          <br />
           <p>Unsubscribe from the listserve
             <a href="http://${ req.get('host') }/api/sub/unsub/${ hashedEmail }" target="blank">here</a>
           </p>
@@ -93,7 +92,7 @@ router.get('/verify/:hash', (req, res, next) => {
       }
       else {
         sub.update({ subStatus: 'verified' })
-        res.redirect(`http://${ req.get('host') }/verify`)
+        res.redirect(`http://${ req.get('host') }/verify.html`)
       }
       
     })
@@ -113,7 +112,7 @@ router.get('/unsub/:hash', (req, res, next) => {
       }
       else {
         sub.update({ subStatus: 'unsubscribed' })
-        res.send('email is gone.')
+        res.redirect(`http://${ req.get('host') }/unsubscribe.html`)
       }
     })
 

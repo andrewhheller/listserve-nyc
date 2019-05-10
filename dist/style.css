@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+/* email verification page */
+.verify-image {
+  width: 600px;
+}
+
+@media screen and (max-width: 768px) {
+  .verify-image {
+    width: 90%;
+  }
+}
+
 /* remove default red border arround required texarea only in Firefox! */
 input:required {
   box-shadow: none;

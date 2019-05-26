@@ -198,7 +198,7 @@ body {
 
 .section-title {
   font-family: Verdana;
-  font-size: 9vh;
+  font-size: 7vh;
   text-align: center;
   margin-top: 75px;
 }
@@ -415,7 +415,7 @@ header .icon {
 
 #transparent-box h2 {
   margin-top: -7%;
-  font-size: 30px;
+  font-size: 3vh;
   font-family: Verdana;
   font-weight: normal;
   text-align: center;
@@ -661,10 +661,9 @@ header .icon {
 }
 
 #contact {
-  bottom: 0;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
-  height: 100vh;
+  padding-top: 30px;
 }
 
 #contact .fa:hover {
@@ -732,10 +731,10 @@ header .icon {
 }
 
 @media screen and (max-width: 1000px) {
-  #contact-responsive,
+  #contact,
   #contact-responsive {
     float: none;
-    width: 100%;
+    width: 80%;
   }
 }
 

@@ -67,11 +67,11 @@ textarea:required {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
 }
 
 .modal-content-text {
-  width: 50%;
+  width: 80%;
   margin: auto;
   color: #262626;
 }
@@ -187,7 +187,7 @@ body {
 
 .section-title {
   font-family: Verdana;
-  font-size: 40px;
+  font-size: 9vh;
   text-align: center;
   margin-top: 75px;
 }
@@ -396,7 +396,7 @@ header .icon {
   margin-top: 3.5%;
   font-family: Verdana;
   font-weight: normal;
-  font-size: 12vh;
+  font-size: 13vh;
   letter-spacing: 0.04em;
   color: white;
   text-align: center;
@@ -412,6 +412,11 @@ header .icon {
 }
 
 @media screen and (max-width: 768px) {
+
+  #transparent-box h1 {
+    font-size: 10vh;
+  }
+
   #showcase .container {
     width: 100%;
   }
@@ -514,7 +519,7 @@ header .icon {
   display: block;
   margin: auto;
   text-align: center;
-  padding-top: 12px;
+  padding-top: 15px;
 }
 
 @media screen and (max-width: 800px) {
@@ -542,7 +547,8 @@ header .icon {
 
 .hiw-caption {
   text-align: center;
-  font-size: 15px;
+  font-size: 2vh;
+  font-family: "Open Sans", Verdana;
 }
 
 @media screen and (max-width: 768px) {
@@ -576,6 +582,7 @@ header .icon {
 
 .faq a {
   color: #E6E6E6;
+  font-family: "Open Sans", Verdana;
   font-weight: bold;
   margin-left: 250px;
 }
@@ -592,6 +599,7 @@ header .icon {
   }
 
   .faq-answer {
+    font-family: "Open Sans", Verdana;
     margin-left: 50px;
     margin-right: 50px;
   }

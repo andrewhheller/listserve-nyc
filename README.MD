@@ -14,4 +14,4 @@
 
 <p>We are open source - feel free to browse our code, clone and build your own local city email lottery system!<p>
   
-<p>Check out our live dev version <a href="https://listervenyc-dev.herokuapp.com">here</a>!</p>
+<p>Check out our live dev version <a href="https://listservenyc-dev.herokuapp.com">here</a></p>

@@ -7,8 +7,8 @@ const Contact = ({ contactMail }) => {
   
   return (
     <section id="contact">
-      <h1 className="section-title" id="contact-anchor">Contact</h1>
-      <div className="col-3" id="contact-responsive">
+      <h1 className="section-title">Contact</h1>
+      <div className="col-4" id="contact-responsive">
         <SocialContact />
       </div>
       <div className="col-8" id="contact-responsive">

@@ -6,7 +6,7 @@ import { birdOfPrey } from './utils';
 const SocialContact = () => {
 
   return (
-    <div>
+    <div className="social-contact">
       <p className="follow-us">Follow Us!</p>
 
       <p>

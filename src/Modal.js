@@ -13,7 +13,10 @@ const Modal = ({ show, modalEmail, handleClose }) => {
     	<div className="modal-content">
 		    <div className="modal-content-text">
       		<h2>Great job!</h2>
-      		<p>We just emailed a confirmation link to <span>{ modalEmail }</span>. Click the link to confirm your subscription!</p>
+      		<p>We just emailed a confirmation link to 
+							<span>{ modalEmail }</span>.
+							<br />
+						Click the link to confirm your subscription!</p>
       		<button type="button" className="closeBtn" onClick={ handleClose }>OK</button>
           <br />
       		<img src="img/email-dove.png" style={{width: "50%"}} />

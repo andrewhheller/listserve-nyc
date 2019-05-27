@@ -522,7 +522,7 @@ header .icon {
 /* How it works */
 
 .hiw-container {
-  height: 100vh;
+  height: 100%;
 }
 
 .hiw-image-scatter {
@@ -542,6 +542,12 @@ header .icon {
   .hiw-image-scatter {
     padding-top: 20px;
   }
+}
+
+@media screen and (min-width: 1400px) {
+  .hiw-container {
+    height: 100vh;
+  } 
 }
 
 .hiw-image-trophy {

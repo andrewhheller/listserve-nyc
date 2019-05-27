@@ -198,7 +198,7 @@ body {
 
 .section-title {
   font-family: Verdana;
-  font-size: 7vh;
+  font-size: 5em;
   text-align: center;
   margin-top: 75px;
 }
@@ -535,6 +535,9 @@ header .icon {
 }
 
 @media screen and (max-width: 800px) {
+  .hiw-container {
+    height: 100%;
+  } 
   .hiw-image-scatter {
     padding-top: 20px;
   }
@@ -561,7 +564,7 @@ header .icon {
   width: 75%;
   margin: 0 auto;
   text-align: center;
-  font-size: 2vh;
+  font-size: 16px;
   font-family: "Open Sans", Verdana;
 }
 
@@ -733,11 +736,12 @@ header .icon {
   color: green;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
   #contact,
   #contact-responsive {
     float: none;
-    width: 80%;
+    width: 90%;
+    /* padding-left: 10px; */
   }
 }
 

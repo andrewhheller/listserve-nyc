@@ -226,6 +226,7 @@ body {
 .col-1mid {width: 12.50%}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
+.col-3mid { width: 29.17 }
 .col-4 {width: 33.33%;}
 .col-5 {width: 41.66%;}
 .col-6 {width: 50%;}
@@ -667,7 +668,7 @@ header .icon {
 }
 
 #contact {
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
   padding-top: 30px;
 }
@@ -741,7 +742,6 @@ header .icon {
   #contact-responsive {
     float: none;
     width: 90%;
-    /* padding-left: 10px; */
   }
 }
 

@@ -42,7 +42,10 @@ const Sub = conn.define('sub', {
 // generate and save hash of subscriber's email into verifyHash when subscription row is created (hook)
 Sub.beforeValidate(sub => {
   return bcrypt.hash(sub.email, saltRounds)
-    .then(hash => sub.verifyHash = hash)
+    .then(hash => {
+      hash = hash.replace("/", "-")
+      sub.verifyHash = hash
+    })
     .catch(error => console.log(error))
 })
 

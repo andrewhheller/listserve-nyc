@@ -43,8 +43,8 @@ const Sub = conn.define('sub', {
 Sub.beforeValidate(sub => {
   return bcrypt.hash(sub.email, saltRounds)
     .then(hash => {
-      hash = hash.replace("/", "-")
-      sub.verifyHash = hash
+      cleanHash = hash.replace("/", "-")
+      sub.verifyHash = cleanHash
     })
     .catch(error => console.log(error))
 })

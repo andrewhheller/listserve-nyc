@@ -55,22 +55,24 @@ router.post('/', (req, res, next) => {
         html: message
       }
 
-      transporter.sendMail(mailOptions, (error, data) => {
+      // if email row was created (if not, i.e. email already exists, do not send out another confirmation email)
+      if(result[1]) {
+        transporter.sendMail(mailOptions, (error, data) => {
 
-        if(error) {
-          res.json({
-            msg: 'fail'
-          })
-        }
+          if(error) {
+            res.json({
+              msg: 'fail'
+            })
+          }
 
-        else {
-          res.json({
-            msg: 'success'
-          })
-        }
+          else {
+            res.json({
+              msg: 'success'
+            })
+          }
 
-      })
-
+        })
+      }
     })  
     .catch(error => next(error))
 });
